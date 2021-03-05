@@ -1,16 +1,4 @@
 /* ./src/index.css */
 @tailwind base;
-/* @tailwind components; */
+@tailwind components;
 @tailwind utilities;
-
-@layer base {
-  @font-face {
-    font-family: Brfirma;
-    src: url("./assets/BRFirma-Regular.ttf");
-  }
-  @font-face {
-    font-family: Brfirma;
-    font-weight: bold;
-    src: url("./assets/BRFirma-SemiBold.ttf");
-  }
-}
