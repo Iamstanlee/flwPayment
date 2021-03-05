@@ -37,43 +37,9 @@ const useFlw = () => {
           dispatch({ type: UPDATE_STEP, payload: 3 });
         }
         if (flw.otp) {
-          // dispatch({ t });
+          dispatch({ type: UPDATE_STEP, payload: 0 });
         }
       }, 2000);
-      // proceed based on the suggested authorization mode
-      const decideNextStep = (response) => {
-        // save charge reference
-        // setReference(response.response && response.response.data);
-        // setCard(response.card && response.card);
-        // setStepNote("");
-        const authMode =
-          response.response &&
-          response.response.meta &&
-          response.response.meta.authorization.mode;
-        switch (authMode) {
-          case "pin":
-            // setStep(1);
-            // setStepNote("Enter card pin");
-            break;
-          case "avs_noauth":
-            // setStep(2);
-            break;
-          case "redirect":
-            // call the "validate-charge" api instead
-            // setStep(3);
-            // const redirectURL = response.response.meta.authorization.redirect;
-            // const extWindow = window.open(redirectURL, "_blank");
-            // // validate charge when external window is closed
-            // extWindow.onunload = function () {};
-            break;
-          case "otp":
-            // setStep(3);
-            break;
-          default:
-          // setStep(0);
-          // onPaymentFailed(response.response ?? "Payment failed, Try again");
-        }
-      };
     }
   }, [flw.isLoading]);
 
